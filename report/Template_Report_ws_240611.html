@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TMS Planning Report: SUBIDFILLER</title>
+      <style>
+         @page {
+         size: 8.5in 11in;
+         margin: 0.15in;
+         }
+         body {
+         font-family: Helvetica;  
+         margin: 0;
+         padding: 0.15in;
+         box-sizing: border-box;
+         position: relative;
+         }
+         .container {
+         width: 100%;
+         max-width: calc(8.5in - 0.3in);
+         margin: 0;
+         padding: 0;
+         background-color: white;
+         text-align: center;
+         }
+        .left-align {
+            text-align: left;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .left-align h2{
+            margin: 0;
+            font-size: 24px;
+        }
+        .left-align p {
+            margin: 0;
+            font-size: 24px;
+            margin-top: 5px; /* Adjust this value to reduce space */
+        }
+         h1 {
+         text-align: center;
+         margin-bottom: 5px;
+         }    
+         h2 {
+         text-align: center;
+         margin-bottom: 10px;
+         font-weight: normal;
+         } p {
+            margin: 0;
+            font-size: 14px;
+            margin-top: 3px; /* Adjust this value to reduce space */
+        }
+         .tables-container,
+         .image-table {
+         display: flex;
+         justify-content: center;
+         gap: 15px;
+         max-width: calc(8.5in - 0.3in);
+         margin: 0 auto;
+         }
+         .table-wrapper {
+         width: 24%;
+         }
+         .table-wrapper2 {
+         width: 48%;
+         }
+         table {
+         border-collapse: collapse;
+         width: 100%;
+         background-color: white;
+         font-size: 15px;
+         }
+         th, td {
+         padding: 0px;
+         text-align: center;
+         white-space: nowrap;
+         }
+         th {
+         background-color: white;
+         font-weight: normal;
+         }
+         .table-title {
+         font-weight: bold;
+         text-align: center;
+         margin-bottom: 1px;
+         }
+         .center-cell, .orientation-cell {
+         width: 50%;
+         }
+         .label-cell, .number-cell {
+          text-align: right;
+          font-variant-numeric: tabular-nums;
+         }
+         .subid {
+         position: relative;
+         top: calc(0.15in + 3px);
+         right: calc(0.15in - 10px);
+         text-align: right;
+         }
+         .image-table {
+         max-width: calc(8.5in - 0.3in);
+         width: 100%;
+         margin: 0 auto;
+         margin-top: 10px;
+         margin-bottom: 5px;
+         border-collapse: separate;
+         border-spacing: 7px 1px;
+         table-layout: fixed;
+/*         border: 1px solid black;*/
+         }
+         .image-table.first-table {
+         border-spacing: 15px 0; /* Set the gap between images */
+         }
+         .image-table.close {
+            margin-top: 1px;
+            margin-bottom: 3px;
+         }
+        .image-table.close td {
+            border: 2px solid white;
+        }
+        .image-table.close td[data-border="true"] {
+            border: 2px solid black; /* Apply border for specific cells */
+        }
+         .image-table td {
+         padding: 0;
+         height: 2.27in;
+         }
+         .image-table tr:first-child td,
+         .image-table tr:nth-child(2) td,
+         .image-table tr:nth-child(3) td {
+         height: 1.37in;
+         }
+         .image-table img {
+         height: 100%;
+         width: auto;
+         }
+         .image-table-1inch {
+            border-spacing: 15px 0px; 
+            margin-top: 1px;
+        }
+         .image-table-1inch tr:first-child td,
+         .image-table-1inch tr:nth-child(2) td,
+         .image-table-1inch tr:nth-child(3) td,
+         .image-table-1inch tr:nth-child(4) td,
+         .image-table-1inch tr:nth-child(5) td {
+         height: 1.2in;
+         }
+         .image-table-1inch img {
+         height: 1.2in;
+         width: auto;
+/*         border: 1px solid black;*/
+         }
+         .image-table-2inch {
+            border-spacing: 15px 0px; 
+            margin-top: 0px;
+        }
+         .image-table-2inch img {
+         height: 2.15in; /* Set height of images to 2 inches */
+         width: auto; /* Maintain aspect ratio */
+/*         border: 1px solid black;*/
+         }
+         .label {
+         position: relative;
+         font-size: 9px;
+         transform: rotate(-90deg);
+         transform-origin: left top;
+         }
+         .page-break {
+         page-break-after: always;
+         }
+         .labels-container {
+         display: flex;
+         justify-content: center;
+         margin-bottom: 5px;
+         max-width: calc(8.5in - 0.3in);
+         margin: 0 auto;
+         gap: 15px; /* Match the gap between images */
+         }         
+         .labels-container.left {
+         justify-content: left;
+         margin-bottom: 1px;
+         }
+         .label-item {
+         width: 24%; /* Ensure each label matches the width of the images */
+         text-align: center;
+         font-weight: bold;
+         }
+         .label-item2 {
+         width: 20%; /* Ensure each label matches the width of the images */
+         text-align: center;
+         font-weight: bold;
+         }
+         .label-item-left {
+         width: 24%; 
+         text-align: left;
+         font-weight: normal;
+         font-size: 12px;
+         }.label-item-left.big {
+         width: 24%; 
+         text-align: left;
+         font-weight: bold;
+         font-size: 15px;
+         }
+      </style>
+   </head>
+   <body>
+    <div class="container" id="blank-page">
+    </div>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="network_efield_figs_plots">
+         <div class="subid">SUBIDFILLER<br>DATEFILLER</div>
+         <table class="image-table first-table">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/AllNet+LH+MidT+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/AllNet+RH+MidT+Dorsal.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="tables-container">
+            <div class="table-wrapper">
+               <div class="table-title">L FPN-A</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">1xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">1xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">1ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">1yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">1zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">1zhand</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper">
+               <div class="table-title">L SAL & CG-OP</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">2xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">2xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">2ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">2yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">2zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">2zhand</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper">
+               <div class="table-title">L DN-A & B</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">3xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">3xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">3ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">3yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">3zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">3zhand</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper">
+               <div class="table-title">R SAL & CG-OP</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">4xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">4xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">4ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">4yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">4zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">4zhand</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <table class="image-table">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+MidT+Dorsal.png" alt="FPN-A Cluster"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+MidT+Dorsal.png" alt="SALCG LH Cluster"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+MidT+Dorsal.png" alt="DN-A/B Cluster"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+MidT+Dorsal.png" alt="SALCG RH Cluster"></td>
+            </tr>
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+LH+MidT+Dorsal.png" alt="FPN-A magnE"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+LH+MidT+Dorsal.png" alt="SALCG LH magnE"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+magnE+LH+MidT+Dorsal.png" alt="DN-A/B magnE"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+magnE+RH+MidT+Dorsal.png" alt="SALCG RH magnE"></td>
+            </tr>
+            <tr>
+               <td><img src="./barplot/SUBIDFILLER_T11_FPNA_Thr0_LBA46_d2_A0_barplot.png" alt="FPN-A barplot"></td>
+               <td><img src="./barplot/SUBIDFILLER_T16_SAL_CG_Thr0_LBA46_d2_A0_barplot.png" alt="SALCG LH barplot"></td>
+               <td><img src="./barplot/SUBIDFILLER_T18_DNA_DNB_Thr0_LBA46_d2_A0_barplot.png" alt="DN-A/B barplot"></td>
+               <td><img src="./barplot/SUBIDFILLER_T16_SAL_CG_Thr0_RBA46_d2_A0_barplot.png" alt="SALCG RH barplot"></td>
+            </tr>
+            <tr>
+               <td><img src="./density/SUBIDFILLER_T11_FPNA_Thr0_LBA46_d2_A0_density.png" alt="FPN-A density"></td>
+               <td><img src="./density/SUBIDFILLER_T16_SAL_CG_Thr0_LBA46_d2_A0_density.png" alt="SALCG LH density"></td>
+               <td><img src="./density/SUBIDFILLER_T18_DNA_DNB_Thr0_LBA46_d2_A0_density.png" alt="DN-A/B density"></td>
+               <td><img src="./density/SUBIDFILLER_T16_SAL_CG_Thr0_RBA46_d2_A0_density.png" alt="SALCG RH density"></td>
+            </tr>
+         </table>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="skin_figs">
+         <div class="subid">SUBIDFILLER</div>
+         <div class="tables-container">
+            <div class="table-wrapper2">
+               <div class="table-title">L FPN-A Coil Center</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/FPNA+LH+Skin+CoilCenter.png" alt="FPN-A Coil Center"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">L FPN-A Coil Orientation</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/FPNA+LH+Skin+CoilOrientation.png" alt="FPN-A Coil Orientation"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">L DN-A & B Coil Center</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/DNAB+LH+Skin+CoilCenter.png" alt="DN-A & B Coil Center"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">L DN-A & B Coil Orientation</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/DNAB+LH+Skin+CoilOrientation.png" alt="DN-A & B Coil Orientation"></td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper2">
+               <div class="table-title">L SAL & CG-OP Coil Center</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/SALCG+LH+Skin+CoilCenter.png" alt="SAL & CG-OP Coil Center"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">L SAL & CG-OP Coil Orientation</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/SALCG+LH+Skin+CoilOrientation.png" alt="SAL & CG-OP Coil Orientation"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">R SAL & CG-OP Coil Center</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/SALCG+RH+Skin+CoilCenter.png" alt="SAL & CG-OP Coil Center"></td>
+                  </tr>
+               </table>
+               <br>
+               <div class="table-title">R SAL & CG-OP Coil Orientation</div>
+               <table class="image-table image-table-2inch">
+                  <tr>
+                     <td><img src="./skin_figures/SALCG+RH+Skin+CoilOrientation.png" alt="SAL & CG-OP Coil Orientation"></td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="magnE_figs">
+         <div class="subid">SUBIDFILLER</div>
+         <div id="blank-space">
+             <h1><br><br><br><br></h1>
+         </div>
+         <div class="tables-container">
+            <div class="table-wrapper2">
+               <div class="table-title">L FPN-A</div>
+                <table>
+                  <tr>
+                     <td>R</td>
+                     <td>L</td>
+                  </tr>
+                </table>
+               <table class="image-table">
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+RM+MidT+Dorsal.png" alt="FPN-A"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+LM+MidT+Dorsal.png" alt="FPN-A"></td>
+                  </tr>
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+RH+MidT+Dorsal.png" alt="FPN-A"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+LH+MidT+Dorsal.png" alt="FPN-A"></td>
+                  </tr>
+               </table>
+               <div class="table-title">L DN-A & B</div>
+                <table>
+                  <tr>
+                     <td>R</td>
+                     <td>L</td>
+                  </tr>
+                </table>
+               <table class="image-table">
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+magnE+RM+MidT+Dorsal.png" alt="DN-A & B"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+magnE+LM+MidT+Dorsal.png" alt="DN-A & B"></td>
+                  </tr>
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+magnE+RH+MidT+Dorsal.png" alt="DN-A & B"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+magnE+LH+MidT+Dorsal.png" alt="DN-A & B"></td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper2">
+               <div class="table-title">L SAL & CG-OP</div>
+                <table>
+                  <tr>
+                     <td>R</td>
+                     <td>L</td>
+                  </tr>
+                </table>
+               <table class="image-table">
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+RM+MidT+Dorsal.png" alt="L SAL & CG-OP"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+LM+MidT+Dorsal.png" alt="L SAL & CG-OP"></td>
+                  </tr>
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+RH+MidT+Dorsal.png" alt="L SAL & CG-OP"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+LH+MidT+Dorsal.png" alt="L SAL & CG-OP"></td>
+                  </tr>
+               </table>
+               <div class="table-title">R SAL & CG-OP</div>
+                <table>
+                  <tr>
+                     <td>R</td>
+                     <td>L</td>
+                  </tr>
+                </table>
+               <table class="image-table">
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+magnE+RM+MidT+Dorsal.png" alt="R SAL & CG-OP"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+magnE+LM+MidT+Dorsal.png" alt="R SAL & CG-OP"></td>
+                  </tr>
+                  <tr>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+magnE+RH+MidT+Dorsal.png" alt="R SAL & CG-OP"></td>
+                     <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+magnE+LH+MidT+Dorsal.png" alt="R SAL & CG-OP"></td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="clusters_inflated">
+         <div class="subid">SUBIDFILLER</div>
+         <table class="image-table image-table-1inch">
+            <tr>
+               <td>L Search Space</td>
+               <td><img src="./efield_figures/trimmed/padded_images/SearchSpace+LH+Inflated+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SearchSpace+RH+Inflated+Dorsal.png" alt="Right Hemisphere"></td>
+               <td>R Search Space</td>
+            </tr>
+        </table>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td>L Sulcus Map</td>
+               <td><img src="./efield_figures/trimmed/padded_images/Sulc+LH+Inflated+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/Sulc+RH+Inflated+Dorsal.png" alt="Right Hemisphere"></td>
+               <td>R Sulcus Map</td>
+            </tr>
+         </table>
+        <div class="labels-container">
+            <div class="label-item2">L FPN-A</div>
+            <div class="label-item2">L SAL & CG-OP</div>
+            <div class="label-item2">L DN-A & B</div>
+            <div class="label-item2">R SAL & CG-OP</div>
+         </div>
+         <div class="labels-container left">
+            <div class="label-item-left">Target network</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+TANS+ROI_targnet.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+TANS+ROI_targnet.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+TANS+ROI_targnet.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+TANS+ROI_targnet.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left">Target network in search space</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+TANS+ROI_targnetsearch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+TANS+ROI_targnetsearch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+TANS+ROI_targnetsearch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+TANS+ROI_targnetsearch.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+        <div class="labels-container left">
+            <div class="label-item-left">After discarding vertices in sulcus</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+TANS+ROI_targnetsearchsulc.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+TANS+ROI_targnetsearchsulc.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+TANS+ROI_targnetsearchsulc.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+TANS+ROI_targnetsearchsulc.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left">Surface area of each patch</div>
+         </div>
+         <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Clusters+Inflated+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Clusters+Inflated+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Clusters+Inflated+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Clusters+Inflated+Dorsal.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left">Final target network patch</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+TANS+ROI_targpatch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+TANS+ROI_targpatch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/DNAB+LH+TANS+ROI_targpatch.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+RH+TANS+ROI_targpatch.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="dose-1">
+         <div class="subid">SUBIDFILLER</div>
+         <br>
+        <div class="labels-container">
+            <div class="label-item">L FPN-A</div>
+            <div class="label-item">L SAL & CG-OP</div>
+            <div class="label-item">L DN-A & B</div>
+            <div class="label-item">R SAL & CG-OP</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./dose/T11_FPNA_Thr0_LBA46_d2_hotspot.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T16_SAL_CG_Thr0_LBA46_d2_hotspot.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T18_DNA_DNB_Thr0_LBA46_d2_hotspot.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T16_SAL_CG_Thr0_RBA46_d2_hotspot.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">73.9 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_10.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_10.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_10.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_10.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+        <div class="labels-container left">
+            <div class="label-item-left big">82.0 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_11.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_11.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_11.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_11.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">90.2 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_12.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_12.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_12.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_12.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">98.3 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_13.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_13.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_13.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_13.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">106.4 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_14.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_14.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_14.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_14.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div><p>Boxed = Best Dose assuming a 100 V/m threshold for neural activation</p></div>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="dose-2">
+         <div class="subid">SUBIDFILLER</div>
+         <br>
+        <div class="labels-container">
+            <div class="label-item">L FPN-A</div>
+            <div class="label-item">L SAL & CG-OP</div>
+            <div class="label-item">L DN-A & B</div>
+            <div class="label-item">R SAL & CG-OP</div>
+         </div>
+        <table class="image-table image-table-1inch">
+            <tr>
+               <td><img src="./dose/T11_FPNA_Thr0_LBA46_d2_didt_curve.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T16_SAL_CG_Thr0_LBA46_d2_didt_curve.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T18_DNA_DNB_Thr0_LBA46_d2_didt_curve.png" alt="Left Hemisphere"></td>
+               <td><img src="./dose/T16_SAL_CG_Thr0_RBA46_d2_didt_curve.png" alt="Right Hemisphere"></td>
+            </tr>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">114.5 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_15.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_15.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_15.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_15.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+        <div class="labels-container left">
+            <div class="label-item-left big">122.6 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_16.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_16.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_16.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_16.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">130.7 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_17.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_17.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_17.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_17.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">138.8 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_18.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_18.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_18.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_18.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="labels-container left">
+            <div class="label-item-left big">146.9 A/&mu;S</div>
+         </div>
+        <table class="image-table close">
+            <tr>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/FPNA+LH+Dose+MidT+Dorsal_19.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+LH+Dose+MidT+Dorsal_19.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/DNAB+LH+Dose+MidT+Dorsal_19.png" alt="Left Hemisphere"></td>
+               <td data-border="false"><img src="./efield_figures/trimmed/padded_images/SALCG+RH+Dose+MidT+Dorsal_19.png" alt="Right Hemisphere"></td>
+            </tr>
+         </table>
+         <div><p>Boxed = Best Dose assuming a 100 V/m threshold for neural activation</p></div>
+      </div>
+      <div class="page-break"></div>
+      <div class="container" id="sgACCNeg">
+         <div class="subid">SUBIDFILLER</div>
+         <div class="labels-container">
+            <div class="label-item">MS-HBM Networks</div>
+            <div class="label-item">sgACC "Networks"</div>
+            <div class="label-item">MS-HBM Networks</div>
+         </div>
+         <table class="image-table first-table">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/AllNet+LH+MidT+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/sgACCNet+LH+MidT+Dorsal.png" alt="Left Hemisphere"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/AllNet+LH+MidT+Dorsal.png" alt="Left Hemisphere"></td>
+            </tr>
+         </table>
+         <div class="tables-container">
+            <div class="table-wrapper">
+               <div class="table-title">L SAL & CG-OP</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">2xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">2xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">2ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">2yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">2zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">2zhand</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper">
+               <div class="table-title">Negative Cluster</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">5xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">5xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">5ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">5yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">5zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">5zhand</td>
+                  </tr>
+               </table>
+            </div>
+            <div class="table-wrapper">
+               <div class="table-title">L FPN-A</div>
+               <table>
+                  <tr>
+                     <th colspan="4">Avoid = None</th>
+                  </tr>
+                  <tr>
+                     <th class="center-cell" colspan="2">&nbsp;&nbsp;&nbsp;Center&nbsp;&nbsp;</th>
+                     <th class="orientation-cell" colspan="2">Orientation</th>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">1xcntr</td>
+                     <td class="label-cell">X =</td>
+                     <td class="number-cell">1xhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">1ycntr</td>
+                     <td class="label-cell">Y =</td>
+                     <td class="number-cell">1yhand</td>
+                  </tr>
+                  <tr>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">1zcntr</td>
+                     <td class="label-cell">Z =</td>
+                     <td class="number-cell">1zhand</td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <table class="image-table">
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+MidT+Dorsal.png" alt="SALCG LH Cluster"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/sgACCNeg+LH+MidT+Dorsal.png" alt="sgACC Neg Cluster"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+MidT+Dorsal.png" alt="FPN-A Cluster"></td>
+            </tr>
+            <tr>
+               <td><img src="./efield_figures/trimmed/padded_images/SALCG+LH+magnE+LH+MidT+Dorsal.png" alt="FPN-A magnE"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/sgACCNeg+LH+magnE+LH+MidT+Dorsal.png" alt="sgACCNeg LH magnE"></td>
+               <td><img src="./efield_figures/trimmed/padded_images/FPNA+LH+magnE+LH+MidT+Dorsal.png" alt="SALCG magnE"></td>
+            </tr>
+            <tr>
+               <td><img src="./barplot/SUBIDFILLER_T16_SAL_CG_Thr0_LBA46_d2_A0_barplot.png" alt="SALCG LH barplot"></td>
+               <td><img src="./barplot/SUBIDFILLER_T1_NegCorr_Thr0_LBA46_d2_A0_barplot.png" alt="sgACCNeg barplot"></td>
+               <td><img src="./barplot/SUBIDFILLER_T11_FPNA_Thr0_LBA46_d2_A0_barplot.png" alt="FPN-A LH barplot"></td>
+            </tr>
+            <tr>
+               <td><img src="./density/SUBIDFILLER_T16_SAL_CG_Thr0_LBA46_d2_A0_density.png" alt="SALCG LH density"></td>
+               <td><img src="./density/SUBIDFILLER_T1_NegCorr_Thr0_LBA46_d2_A0_density.png" alt="sgACCNeg density"></td>
+               <td><img src="./density/SUBIDFILLER_T11_FPNA_Thr0_LBA46_d2_A0_density.png" alt="FPN-A LH density"></td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

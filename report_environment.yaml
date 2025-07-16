@@ -1,0 +1,15 @@
+name: report
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - pillow
+  - playwright
+  - pymupdf
+  - python-pptx
+  - matplotlib
+  - pip
+  - pip:
+      - nest_asyncio
+      - pytest-playwright
+      - reportlab
